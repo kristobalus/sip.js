@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "homepage": "https://github.com/kristobalus/sip.js",
   "author": "Ildar Tamendarov <ildar.tamendarov@gmail.com>",
-  "main": "lib/sip.js",
+  "main": "sip.js",
   "scripts": {
     "test": "./node_modules/.bin/coffee test/runtests.coffee",
     "release": "standard-version",
