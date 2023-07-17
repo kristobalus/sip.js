@@ -1,12 +1,20 @@
 {
   "name": "sip",
   "description": "Simple SIP implementation",
-  "version": "0.0.6",
-  "homepage": "http://github.com/kirm/sip.js",
-  "author": "Kirill Mikhailov <kirill.mikhailov@gmail.com>",
-  "main": "sip",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kristobalus/sip.js",
+  "author": "Ildar Tamendarov <ildar.tamendarov@gmail.com>",
+  "main": "sip.js",
   "scripts": {
-    "test": "./node_modules/.bin/coffee test/runtests.coffee"
+    "test:coffee": "./node_modules/.bin/coffee test/runtests.coffee",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\\\"module\\\": \\\"commonjs\\\" }' mocha --timeout 10000 -r ts-node/register 'test/**/*.ts'",
+    "prebuild": "npm run clean",
+    "build": "tsc --build",
+    "clean": "rimraf lib/*",
+    "prerelease": "npm run build && git add . --all",
+    "release": "standard-version -a",
+    "postrelease": "git push --follow-tags origin master",
+    "version": "standard-version --dry-run"
   },
   "directories": {
     "lib": "",
@@ -21,6 +29,8 @@
     "node": ">=0.2.2"
   },
   "dependencies": {
+    "rimraf": "^5.0.1",
+    "standard-version": "^9.5.0",
     "ws": "^7.4.6"
   },
   "devDependencies": {
