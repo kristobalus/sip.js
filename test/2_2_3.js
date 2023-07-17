@@ -1,4 +1,4 @@
-var sip = require('../sip.js');
+var sip = require('../src/sip.js');
 var assert = require('assert');
 var udp = require('../udp.js');
 var util = require('util');
@@ -43,5 +43,5 @@ sendSocket.on('data', sip.makeStreamParser(function(m) {
   transport.destroy();
   sendSocket.end();
   util.print('PASSED\n');
-})) 
+}))
 

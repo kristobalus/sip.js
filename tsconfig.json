@@ -9,12 +9,15 @@
     "allowJs": true,
     "sourceMap": true,
     "outDir": "./lib",
-    "rootDir": ".",
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": true
   },
   "exclude": [
     "node_modules",
+    "doc",
+    "lib",
+    "examples",
     "test"
   ]
 }

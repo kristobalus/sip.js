@@ -92,11 +92,12 @@ function parseGenericHeader(d, h) {
   return h ? h + ',' + d.s : d.s;
 }
 
-function parseAOR(data) {
-  var r = applyRegex(/((?:[\w\-.!%*_+`'~]+)(?:\s+[\w\-.!%*_+`'~]+)*|"[^"\\]*(?:\\.[^"\\]*)*")?\s*\<\s*([^>]*)\s*\>|((?:[^\s@"<]@)?[^\s;]+)/g, data);
-
-  return parseParams(data, {name: r[1], uri: r[2] || r[3] || ''});
-}
+const { parseAOR } = require('./parsers/aor')
+// function parseAOR(data) {
+//   var r = applyRegex(/((?:[\w\-.!%*_+`'~]+)(?:\s+[\w\-.!%*_+`'~]+)*|"[^"\\]*(?:\\.[^"\\]*)*")?\s*\<\s*([^>]*)\s*\>|((?:[^\s@"<]@)?[^\s;]+)/g, data);
+//
+//   return parseParams(data, {name: r[1], uri: r[2] || r[3] || ''});
+// }
 exports.parseAOR = parseAOR;
 
 function parseAorWithUri(data) {
