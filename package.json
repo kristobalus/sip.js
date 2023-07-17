@@ -1,7 +1,7 @@
 {
   "name": "sip",
   "description": "Simple SIP implementation",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/kristobalus/sip.js",
   "author": "Ildar Tamendarov <ildar.tamendarov@gmail.com>",
   "main": "sip.js",
